@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* NAVBAR */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    color: #ffcc00;
+}
+
+/* CARD */
+.card {
+    max-width: 420px;
+    margin: 60px auto;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+/* BUTTON */
+.btn {
+    padding: 12px 20px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #ffcc00, #ff9900);
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* PRODUCT IMAGE */
+.product-img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+/* FADE ANIMATION */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* LIGHT MODE - BABY PINK THEME */
+body.light {
+    background: linear-gradient(135deg, #ffe4ec, #ffd6e0); /* soft baby pink */
+    color: #4a2c2a;
+}
+
+body.light .nav {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+body.light .nav a {
+    color: #4a2c2a;
+}
+
+body.light .nav a:hover {
+    color: #ff4d88; /* pink highlight */
+}
+
+body.light .card {
+    background: rgba(255, 240, 245, 0.9); /* light pink card */
+    color: #4a2c2a;
+}
+
+body.light .btn {
+    background: linear-gradient(45deg, #ff9aa2, #ffb6c1); /* pink gradient */
+    color: #4a2c2a;
+}
