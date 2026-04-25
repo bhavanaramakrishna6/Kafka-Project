@@ -1,16 +1,10 @@
 from flask import Flask, request, render_template
 from flask_cors import CORS
-from kafka import KafkaProducer
-import json
 
 app = Flask(__name__)
 CORS(app)
 
-# Kafka Producer
-producer = KafkaProducer(
-    bootstrap_servers='localhost:9092',
-    value_serializer=lambda v: json.dumps(v).encode('utf-8')
-)
+counts = {}
 
 @app.route('/')
 def home():
@@ -19,19 +13,16 @@ def home():
 @app.route('/click', methods=['POST'])
 def click():
     data = request.get_json()
-
     user = data.get('user')
-    button = data.get('page')
 
-    event = {
-        "user": user,
-        "button": button
-    }
+    if user not in counts:
+        counts[user] = 0
 
-    producer.send('clicks', value=event)
-    producer.flush()
+    counts[user] += 1
+
+    print("Current Counts:", counts)
 
     return {"status": "success"}
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
