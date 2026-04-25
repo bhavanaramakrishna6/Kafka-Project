@@ -4,7 +4,9 @@
     <title>Product</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
+@app.route('/cart')
+def cart():
+    return render_template('cart.html')
 <body onload="sendClick('product')">
 
 <div class="nav">
@@ -18,7 +20,13 @@
 
 <div class="card">
     <img src="{{ url_for('static', filename='Product1.png') }}">
-
+<style>
+.card {
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+}
+</style>
     <h2>Headphones</h2>
     <p>₹999</p>
 
