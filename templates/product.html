@@ -4,9 +4,6 @@
     <title>Product</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-@app.route('/cart')
-def cart():
-    return render_template('cart.html')
 <body onload="sendClick('product')">
 
 <div class="nav">
@@ -26,14 +23,17 @@ def cart():
     padding: 20px;
     text-align: center;
 }
+.card img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
 </style>
     <h2>Headphones</h2>
     <p>₹999</p>
 
     <button class="btn" onclick="/addToCart()">Add to Cart</button>
 </div>
-
-<script src="script.js"></script>
 
 <script>
 function addToCart() {
