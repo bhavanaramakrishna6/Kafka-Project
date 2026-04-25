@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Checkout</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body onload="sendClick('checkout')">
@@ -10,9 +10,9 @@
 <div class="nav">
     <div id="userDisplay"></div>
     <div>
-        <a href="index.html" onclick="sendClick('nav_home')">Home</a>
-        <a href="product.html" onclick="sendClick('nav_product')">Product</a>
-        <a href="cart.html" onclick="sendClick('nav_cart')">Cart</a>
+        <a href="/index" onclick="sendClick('nav_home')">Home</a>
+        <a href="/product" onclick="sendClick('nav_product')">Product</a>
+        <a href="/cart" onclick="sendClick('nav_cart')">Cart</a>
     </div>
 </div>
 
@@ -28,7 +28,7 @@
 
 <script>
 function goHome() {
-    window.location.href = "index.html";
+    window.location.href = "/index";
 }
 
 // Download logs as JSON file
@@ -56,6 +56,5 @@ function downloadLogs() {
     URL.revokeObjectURL(url);
 }
 </script>
-
 </body>
 </html>
