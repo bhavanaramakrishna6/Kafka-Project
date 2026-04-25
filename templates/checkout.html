@@ -24,13 +24,10 @@
     <button class="btn" onclick="downloadLogs()">📥 Download Logs</button>
 </div>
 
-<script src="script.js"></script>
-
 <script>
 function goHome() {
-    window.location.href = "/index";
+    window.location.href = "/";
 }
-
 // Download logs as JSON file
 function downloadLogs() {
     const logs = JSON.parse(localStorage.getItem("logs")) || [];
@@ -56,5 +53,6 @@ function downloadLogs() {
     URL.revokeObjectURL(url);
 }
 </script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

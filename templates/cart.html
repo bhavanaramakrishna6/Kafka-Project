@@ -6,7 +6,6 @@
 </head>
 
 <body onload="sendClick('cart')">
-
 <div class="nav">
     <div id="userDisplay"></div>
     <div>
@@ -15,21 +14,19 @@
         <a href="/cart" onclick="sendClick('nav_cart')">Cart</a>
     </div>
 </div>
-
 <div class="card">
     <h2>Your Cart 🛒</h2>
     <p>1 Item added</p>
 
     <button class="btn" onclick="goToCheckout()">Proceed to Checkout</button>
 </div>
-
 <script src="script.js"></script>
-
 <script>
 function goToCheckout() {
     window.location.href = "/checkout";
 }
 </script>
-
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
+
