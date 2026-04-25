@@ -10,9 +10,11 @@
 <div class="nav">
     <div id="userDisplay"></div>
     <div>
-        <a href="index.html" onclick="sendClick('nav_home')">Home</a>
-        <a href="product.html" onclick="sendClick('nav_product')">Product</a>
-        <a href="cart.html" onclick="sendClick('nav_cart')">Cart</a>
+        <nav>
+    <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('product') }}">Product</a>
+    <a href="{{ url_for('cart') }}">Cart</a>
+</nav>
     </div>
 </div>
 
